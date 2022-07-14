@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Joy</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="style.css">
+		<script src="js/joy.js"></script>
+	</head>
+	<body>
+
+
+		<div class="full">
+		<!-- joystick  -->
+		<div id="joy3Div" style="width:200px;height:200px;"></div>
+		<div>
+			Posizione X:<input id="joy3PosizioneX" type="text" /><br />
+			Posizione Y:<input id="joy3PosizioneY" type="text" /><br />
+			Direzione:<input id="joy3Direzione" type="text" /><br />
+			X :<input id="joy3X" type="text" /></br>
+			Y :<input id="joy3Y" type="text" />
+		</div>
+		<!-- end joystick -->
+		</div>
+
+
+
+		<!-- script -->
+		<script type="text/javascript">
+
+			var joy3Param = { "title": "joystick3" };
+			var Joy3 = new JoyStick('joy3Div', joy3Param);
+
+			var joy3IinputPosX = document.getElementById("joy3PosizioneX");
+			var joy3InputPosY = document.getElementById("joy3PosizioneY");
+			var joy3Direzione = document.getElementById("joy3Direzione");
+			var joy3X = document.getElementById("joy3X");
+			var joy3Y = document.getElementById("joy3Y");
+
+			// Joy3.GetDir() kerakli
+			setInterval(function(){ joy3IinputPosX.value=Joy3.GetPosX(); }, 50);
+			setInterval(function(){ joy3InputPosY.value=Joy3.GetPosY(); }, 50);
+			setInterval(function(){ joy3Direzione.value=Joy3.GetDir(); }, 50);
+			setInterval(function(){ joy3X.value=Joy3.GetX(); }, 50);
+			setInterval(function(){ joy3Y.value=Joy3.GetY(); }, 50);
+		</script>
+</body>
+</html>
